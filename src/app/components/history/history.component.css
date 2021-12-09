@@ -1,0 +1,40 @@
+.chatWindow{
+    border-radius: 0.25em;
+    border: 1px solid #ced4da;
+    height: 50vh;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    word-break: break-all;
+}
+
+
+.messages {
+    margin-left: 1vw;
+    width: 95%;
+}
+
+.User {
+    margin-top: 1vh;
+    color:#00802F;
+    font-size: x-small;
+    font-style: italic;
+}
+
+.NotUser {
+    margin-top: 1vh;
+    margin-left: 1vw;
+    color:red;
+    font-size: x-small;
+    font-style: italic;
+    text-align: right;
+}
+
+.NotUserText {
+    margin-left: 20vw;
+    color:black;
+    text-align: right;
+}
+

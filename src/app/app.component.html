@@ -1,0 +1,15 @@
+<div class="Wrapper">
+    <app-header></app-header>
+    <main>
+        <div class="mainWrapper">
+            <div class="Anmeldung">
+                <app-registration (submitUser)="onSubmitUser($event)" [User]="username"></app-registration>
+            </div>
+            <div class="Chat">
+                <app-history [history]="messageHistory"></app-history>
+                <app-chat-bar [User]="username"></app-chat-bar>
+            </div>
+        </div>
+    </main>
+    <app-footer></app-footer>
+</div>

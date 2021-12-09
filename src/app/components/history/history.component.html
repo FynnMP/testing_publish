@@ -1,0 +1,13 @@
+<div class="chatWindow"> 
+    <div class="messages" *ngFor="let element of history"> 
+        <div *ngIf="element.loggedin; else elseBlock">
+            <p class="User">{{element.nickname}} - {{element.time}}</p>
+            <p>{{element.message}}</p>
+        </div>
+        <ng-template #elseBlock>
+            <p class="NotUser">{{element.nickname}} - {{element.time}}</p>
+            <p class="NotUserText">{{element.message}}</p>
+        </ng-template>
+
+    </div>
+</div>

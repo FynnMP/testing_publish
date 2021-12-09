@@ -1,0 +1,18 @@
+button {
+    transition-duration: 0.2s;
+    margin-top: 1%;
+    color: #00802F;
+    border-color: #00802F;
+    border-radius: 20px;
+  }
+  
+button:hover {
+    background-color: #00802F; /* Green */
+    color: white;
+  }
+
+button:disabled {
+    color: #00802F;
+    background-color: white;
+}
+

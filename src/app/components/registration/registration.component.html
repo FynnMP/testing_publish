@@ -1,0 +1,18 @@
+<div class="Login">
+    <p>Bitte wählen Sie einen Username aus.</p>
+    <textarea class="form-control" 
+    [(ngModel)]="Username" 
+    (keyup.enter)="addUser(Username)" 
+    placeholder="Username hier eingeben..."
+    rows="1">
+    </textarea>
+    
+    <button class="btn btn-outline-success" 
+    (click)="addUser(Username)" 
+    [disabled]="!Username">
+    Login
+    </button>
+    <br> <br>
+    <p>Angemeldet als: {{User}}</p>
+</div>
+
