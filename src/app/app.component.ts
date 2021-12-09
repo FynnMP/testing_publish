@@ -18,12 +18,13 @@ export class AppComponent implements OnInit{
 
   public messageHistory: any = [];
   public username = "";
-  
+  public colorunique:any = [];
+  public colorlist = ["red","blue","yellow","darkblue","brown", "darkmagenta","indianred", "olive"]
 
   
   ngOnInit(): void {
-    const message = interval(100);
-    message.subscribe(() => {this.http.get("https://cowardly-sloth-15.loca.lt").subscribe((r)=>
+    const message = interval(1000);
+    message.subscribe(() => {this.http.get("http://localhost:3000/").subscribe((r)=>
       {this.messageHistory = r;
       this.messageHistory.map((obj:any) => {obj.nickname == this.username? obj.loggedin = true:obj.loggedin = false})
     })
@@ -31,8 +32,12 @@ export class AppComponent implements OnInit{
 
   }  
 
+  
 
   public onSubmitUser (user: string): void {
     this.username = user
+    //completly random color but they often are to bright or dont look good
+    //this.colorunique = '#'+Math.floor(Math.random()*16777215).toString(16) 
+    this.colorunique = this.colorlist.pop()
   }
 }

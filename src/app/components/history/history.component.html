@@ -5,9 +5,9 @@
             <p>{{element.message}}</p>
         </div>
         <ng-template #elseBlock>
-            <p class="NotUser">{{element.nickname}} - {{element.time}}</p>
+            
+            <p class="NotUser" [ngStyle] ="{color: element.color}">{{element.nickname}} - {{element.time}}</p>
             <p class="NotUserText">{{element.message}}</p>
         </ng-template>
-
     </div>
 </div>

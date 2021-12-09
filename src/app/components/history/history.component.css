@@ -26,10 +26,10 @@
 .NotUser {
     margin-top: 1vh;
     margin-left: 1vw;
-    color:red;
     font-size: x-small;
     font-style: italic;
     text-align: right;
+
 }
 
 .NotUserText {

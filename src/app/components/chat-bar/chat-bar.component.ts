@@ -13,6 +13,7 @@ export class ChatBarComponent implements OnInit {
 
   @Output() submitMessage: EventEmitter<string[]> = new EventEmitter<string[]>();
   @Input() public User = "";
+  @Input() public color = "";
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class ChatBarComponent implements OnInit {
 
     
     const timestamp: string = new Date().toLocaleString("de", {hour: "numeric", minute: "numeric", second: "numeric"});
-    const messages: any = {user: this.User, message: this.chatMessage, time: timestamp};
+    const messages: any = {user: this.User, message: this.chatMessage, time: timestamp, color: this.color};
     
 
     if(!message.replace(/\s/g, "").length){
@@ -42,8 +43,8 @@ export class ChatBarComponent implements OnInit {
     
     
     const headers = { 'content-type': 'application/json'} 
-
-    this.http.post("https://cowardly-sloth-15.loca.lt", JSON.stringify(messages), {'headers':headers}).subscribe(r=>{});
+    console.log(messages)
+    this.http.post("http://localhost:3000/", JSON.stringify(messages), {'headers':headers}).subscribe(r=>{});
     
     this.submitMessage.emit(messages);
     this.chatMessage = "";
