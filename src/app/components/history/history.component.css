@@ -19,14 +19,14 @@
 .User {
     margin-top: 1vh;
     color:#00802F;
-    font-size: x-small;
+    font-size:small;
     font-style: italic;
 }
 
 .NotUser {
     margin-top: 1vh;
     margin-left: 1vw;
-    font-size: x-small;
+    font-size: small;
     font-style: italic;
     text-align: right;
 
@@ -36,5 +36,6 @@
     margin-left: 20vw;
     color:black;
     text-align: right;
+    margin-bottom: 2vh;
 }
 

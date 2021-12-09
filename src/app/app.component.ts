@@ -32,12 +32,16 @@ export class AppComponent implements OnInit{
 
   }  
 
-  
+  public getRandomIntInclusive(min:any, max:any) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
+  }
 
   public onSubmitUser (user: string): void {
     this.username = user
     //completly random color but they often are to bright or dont look good
     //this.colorunique = '#'+Math.floor(Math.random()*16777215).toString(16) 
-    this.colorunique = this.colorlist.pop()
+    this.colorunique = this.colorlist[this.getRandomIntInclusive(1,8)]
   }
 }
