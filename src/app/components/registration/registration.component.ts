@@ -36,16 +36,21 @@ export class RegistrationComponent implements OnInit {
 
     // get unique users and colors
     this.usernames = Array.from(new Set(this.usernames));
-    this.usercolors = Array.from(new Set(this.usercolors));
+    //this.usercolors = Array.from(new Set(this.usercolors));
 
+    console.log(this.usernames)
     // create array with user and color bundle 
     for (var i = 0; i < this.usernames.length; i++) {
       this.usercol.push({
           user: this.usernames[i],
           color: this.usercolors[i]
       })}
-
-    console.log(this.usercol)
+    
+    // get unique users and their color
+    function uniqueByKey(array: any, key:any) {
+        return [...new Map(array.map((x:any) => [x[key], x])).values()];
+      }
+    this.usercol = uniqueByKey(this.usercol, "user")
 
     if(this.usernames.indexOf(user) !== -1){
         alert("Username taken. Please choose a different one!")
