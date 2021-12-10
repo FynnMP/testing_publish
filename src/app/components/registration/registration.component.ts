@@ -10,28 +10,42 @@ export class RegistrationComponent implements OnInit {
 
   @Output() public submitUser = new EventEmitter<string>();
   @Input() public User = "";
+  @Input()  public historyreg: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get("http://localhost:3000/").subscribe((r) => this.data = r);
-    console.log(this.data.length)
-    for (var i = 0; i < this.data.length; i++) {
-      this.usernames.push(this.data[i].nickname)}
+
   }
 
   public Username = "";
-  public data:any = [];
   public usernames:any = [];
+  public usercolors: any =[];
+  public usercol: any = [];
+
   
 
   public addUser(user: string): void{
     user = user.replace("\n", "")
     
-    this.http.get("http://localhost:3000/").subscribe((r) => this.data = r);
-    console.log(this.data.length)
-    for (var i = 0; i < this.data.length; i++) {
-      this.usernames.push(this.data[i].nickname)}
+    // get users and their color out of our history
+    for (var i = 0; i < this.historyreg.length; i++) {
+      this.usernames.push(this.historyreg[i].nickname)
+      this.usercolors.push(this.historyreg[i].color)
+    }
+
+    // get unique users and colors
+    this.usernames = Array.from(new Set(this.usernames));
+    this.usercolors = Array.from(new Set(this.usercolors));
+
+    // create array with user and color bundle 
+    for (var i = 0; i < this.usernames.length; i++) {
+      this.usercol.push({
+          user: this.usernames[i],
+          color: this.usercolors[i]
+      })}
+
+    console.log(this.usercol)
 
     if(this.usernames.indexOf(user) !== -1){
         alert("Username taken. Please choose a different one!")
@@ -41,7 +55,7 @@ export class RegistrationComponent implements OnInit {
       this.submitUser.emit(user);
       this.Username = "";
     }
-    }
+  }
   
 
 

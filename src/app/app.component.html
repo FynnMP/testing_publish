@@ -3,7 +3,7 @@
     <main>
         <div class="mainWrapper">
             <div class="Anmeldung">
-                <app-registration (submitUser)="onSubmitUser($event)" [User]="username"></app-registration>
+                <app-registration (submitUser)="onSubmitUser($event)" [User]="username" [historyreg]="messageHistory"></app-registration>
             </div>
             <div class="Chat">
                 <app-history [history]="messageHistory"></app-history>
