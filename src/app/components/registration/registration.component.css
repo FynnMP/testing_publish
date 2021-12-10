@@ -21,3 +21,12 @@ button:disabled {
     color: #00802F;
     background-color: white;
 }
+
+.logininformation{
+  margin-top: 10vh;
+}
+
+.User{
+  color:#00802F;
+  font-size: large;
+}
