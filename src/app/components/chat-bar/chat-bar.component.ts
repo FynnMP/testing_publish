@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-chat-bar',
   templateUrl: './chat-bar.component.html',

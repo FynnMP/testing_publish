@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   public messageHistory: any = [];
   public username = "";
   public colorunique:any = [];
-  public colorlist = ["red","blue","yellow","darkblue","brown", "darkmagenta","indianred", "olive"]
+  public colorlist = ["red","blue","darkblue","brown", "darkmagenta","indianred", "olive"]
 
   
   ngOnInit(): void {
