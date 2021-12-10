@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit {
   
 
   public addUser(user: string): void{
+    user = user.replace("\n", "")
     
     this.http.get("http://localhost:3000/").subscribe((r) => this.data = r);
     console.log(this.data.length)
