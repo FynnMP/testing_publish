@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
     const message = interval(1000);
-    message.subscribe(() => {this.http.get("http://localhost:3000/").subscribe((r)=>
+    message.subscribe(() => {this.http.get("https://smooth-bullfrog-68.loca.lt").subscribe((r)=>
       {this.messageHistory = r;
       this.messageHistory.map((obj:any) => {obj.nickname == this.username? obj.loggedin = true:obj.loggedin = false})
     })
