@@ -40,6 +40,6 @@ export class AppComponent implements OnInit{
 
   public onSubmitUser (user: string): void {
     this.username = user
-    this.colorunique = this.colorlist[this.getRandomIntInclusive(1,7)]
+    this.colorunique = this.colorlist[this.getRandomIntInclusive(0,6)]
   }
 }

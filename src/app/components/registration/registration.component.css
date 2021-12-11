@@ -34,3 +34,13 @@ button:disabled {
 .allusers{
   margin-top: 8vh;
 }
+
+.userlist{
+  overflow:auto;
+  height: 30vh;
+  width: 40vw;
+}
+
+.userlist::-webkit-scrollbar {
+  display: none;
+}

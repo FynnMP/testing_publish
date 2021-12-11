@@ -14,13 +14,15 @@
     </button>
 
     <p class="logininformation"> Sie sind angemeldet als: <span class="User">{{User}}</span></p>
-    <p class="allusers">Aktuell im Chat befinden sich: </p>    
+    <p class="allusers">Aktuell mit Ihnen im Chat befinden sich: </p>    
     <table>
             <tr>
                 <th>Username</th>
             </tr>
-            <div *ngFor="let element of usercol">
-                <tr [ngStyle] ="{color: element.color}"> {{element.user}}</tr>
+            <div class="userlist">
+                <div *ngFor="let element of usercol">
+                    <tr [ngStyle] ="{color: element.color}"> {{element.user}}</tr>
+                </div>
             </div>
         </table>
 </div>

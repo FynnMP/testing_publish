@@ -23,12 +23,18 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     const usersinchat = interval(1000);
-    usersinchat.subscribe(() => {for (var i = 0; i < this.historyreg.length; i++) {
-                this.usercol.push({
-                    user: this.historyreg[i].nickname,
-                    color: this.historyreg[i].color
-                })}
+    usersinchat.subscribe(() => {
+      // creating json array with user and their color
+      for (var i = 0; i < this.historyreg.length; i++) {
+        if (this.historyreg[i].nickname != this.loggedinUser) {
+          this.usercol.push({
+            user: this.historyreg[i].nickname,
+            color: this.historyreg[i].color
+        })}
+        }
                 
+                
+    // getting only distinct users out of our history
     this.usercol = this.uniqueByKey(this.usercol, "user")
    })
   }
@@ -38,12 +44,12 @@ export class RegistrationComponent implements OnInit {
   public usercolors: any =[];
   public usercol: any = [];
 
-   
+  public loggedinUser = "";
 
 
   public addUser(user: string): void{
     user = user.replace("\n", "")
-    
+    this.loggedinUser = user
     // get users out of our history
     for (var i = 0; i < this.historyreg.length; i++) {
        this.usernames.push(this.historyreg[i].nickname)
