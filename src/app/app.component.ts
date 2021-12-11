@@ -19,12 +19,12 @@ export class AppComponent implements OnInit{
   public messageHistory: any = [];
   public username = "";
   public colorunique:any = [];
-  public colorlist = ["orangered","royalblue","darkblue","brown", "darkmagenta","indianred", "olive"]
+  public colorlist = ["orangered","royalblue","darkblue","brown", "darkmagenta","indianred", "olive", "tomato", "tan", "thistle", "wheat", "plum", "moccasin", "fuchsia"]
 
   
   ngOnInit(): void {
     const message = interval(1000);
-    message.subscribe(() => {this.http.get("https://smooth-bullfrog-68.loca.lt").subscribe((r)=>
+    message.subscribe(() => {this.http.get("http://localhost:3000/").subscribe((r)=>
       {this.messageHistory = r;
       this.messageHistory.map((obj:any) => {obj.nickname == this.username? obj.loggedin = true:obj.loggedin = false})
     })
@@ -40,6 +40,6 @@ export class AppComponent implements OnInit{
 
   public onSubmitUser (user: string): void {
     this.username = user
-    this.colorunique = this.colorlist[this.getRandomIntInclusive(0,6)]
+    this.colorunique = this.colorlist[this.getRandomIntInclusive(0,13)]
   }
 }

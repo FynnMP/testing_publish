@@ -58,9 +58,17 @@ export class RegistrationComponent implements OnInit {
     // get unique users
     this.usernames = Array.from(new Set(this.usernames));
 
+    
+    
+
     // check for usernames, so we cant choose a already taken name
     if(this.usernames.indexOf(user) !== -1){
-      alert("Username taken. Please choose a different one!")
+      alert("Diesen Username gibt es bereits. Bitte wählen Sie einen anderen.")
+      this.Username = "";
+    }
+    //check for username length
+    else if(user.length >= 10){
+      alert("Bitte wählen Sie einen kürzeren Username.")
       this.Username = "";
     }
     else {
