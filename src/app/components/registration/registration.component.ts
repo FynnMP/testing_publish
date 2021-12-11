@@ -53,7 +53,6 @@ export class RegistrationComponent implements OnInit {
     // get users out of our history
     for (var i = 0; i < this.historyreg.length; i++) {
        this.usernames.push(this.historyreg[i].nickname)
-    // this.usercolors.push(this.historyreg[i].color)
     }
 
     // get unique users
