@@ -49,6 +49,7 @@ export class RegistrationComponent implements OnInit {
 
   public addUser(user: string): void{
     user = user.replace("\n", "")
+    user = user.replace(/\s/g, "")
     this.loggedinUser = user
     // get users out of our history
     for (var i = 0; i < this.historyreg.length; i++) {
