@@ -43,7 +43,7 @@ export class ChatBarComponent implements OnInit {
     
     const headers = { 'content-type': 'application/json'} 
     console.log(messages)
-    this.http.post("http://localhost:3000/", JSON.stringify(messages), {'headers':headers}).subscribe(r=>{});
+    this.http.post("https://myserver.loca.lt", JSON.stringify(messages), {'headers':headers}).subscribe(r=>{});
     
     this.submitMessage.emit(messages);
     this.chatMessage = "";
