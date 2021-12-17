@@ -24,6 +24,7 @@ button:disabled {
 
 .logininformation{
   margin-top: 3vh;
+  margin-bottom: 9vh;
 }
 
 .User{
@@ -43,4 +44,14 @@ button:disabled {
 
 .userlist::-webkit-scrollbar {
   display: none;
+}
+
+
+hr{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border-color:black;
+  width: 10vw;
+  
 }
