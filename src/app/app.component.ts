@@ -19,8 +19,8 @@ export class AppComponent implements OnInit{
   public messageHistory: any = [];
   public username = "";
   public colorunique:any = [];
-  public colorlist = ["orangered","royalblue","darkblue","brown", "darkmagenta","indianred", "olive", "tomato", "tan", "wheat", "moccasin", "fuchsia"]
-
+  public colorlist = ["orangered","royalblue","brown", "darkmagenta", "olive","darkblue", "tomato", "fuchsia"]
+  public allcolors = ["orangered","royalblue","brown", "darkmagenta", "olive","darkblue", "tomato", "fuchsia"]
   
   ngOnInit(): void {
     const message = interval(1000);
@@ -32,14 +32,15 @@ export class AppComponent implements OnInit{
 
   }  
 
-  public getRandomIntInclusive(min:any, max:any) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min +1)) + min;
-  }
+
 
   public onSubmitUser (user: string): void {
     this.username = user
-    this.colorunique = this.colorlist[this.getRandomIntInclusive(0,11)]
+    this.colorunique = this.colorlist.pop() 
+    console.log(this.allcolors)
+    console.log(this.colorlist)
+    if (this.colorlist.length == 0){
+      this.colorlist=this.allcolors
+    }
   }
 }

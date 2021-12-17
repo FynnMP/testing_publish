@@ -20,6 +20,7 @@
             </tr>
             <div class="userlist">
                 <div *ngFor="let element of usercol">
+                    <hr>
                     <tr [ngStyle] ="{color: element.color}"> {{element.user}}</tr>
                     <hr>
                 </div>

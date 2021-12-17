@@ -2,10 +2,9 @@
     <div class="messages" *ngFor="let element of history"> 
         <div *ngIf="element.loggedin; else elseBlock">
             <p class="User">{{element.nickname}} - {{element.time}}</p>
-            <p>{{element.message}}</p>
+            <p class="UserMessages">{{element.message}}</p>
         </div>
         <ng-template #elseBlock>
-            
             <p class="NotUser" [ngStyle] ="{color: element.color}">{{element.nickname}} - {{element.time}}</p>
             <p class="NotUserText">{{element.message}}</p>
         </ng-template>
