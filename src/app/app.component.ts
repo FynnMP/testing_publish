@@ -33,11 +33,20 @@ export class AppComponent implements OnInit{
   }  
 
 
+  public getRandomIntInclusive(min:any, max:any) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
+  }
 
   public onSubmitUser (user: string): void {
     this.username = user
-    this.colorunique = this.colorlist.pop() 
-    console.log(this.allcolors)
+    this.colorunique = this.colorlist[this.getRandomIntInclusive(0,this.colorlist.length)]
+    
+    const index = this.colorlist.indexOf(this.colorunique, 0);
+    if (index > -1) {
+      this.colorlist.splice(index, 1);
+}
     console.log(this.colorlist)
     if (this.colorlist.length == 0){
       this.colorlist=this.allcolors

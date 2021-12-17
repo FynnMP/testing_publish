@@ -2,7 +2,7 @@
 <textarea class="form-control" 
 [(ngModel)]="chatMessage" 
 (keyup.enter)="addMessage(chatMessage)" 
-placeholder="Hier schreiben..."
+placeholder="Hier als {{this.User}} schreiben..."
 rows="2" style="resize: none">
 </textarea>
 
